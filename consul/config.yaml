@@ -1,0 +1,21 @@
+# config.yaml
+global:
+  name: consul
+  datacenter: rasp1
+  acls:
+    manageSystemACLs: true
+  gossipEncryption:
+    secretName: consul-gossip-encryption-key
+    secretKey: key
+ui:
+  enabled: true
+server:
+  storage: 10Gi
+connectInject:
+  enabled: true
+controller:
+  enabled: true
+syncCatalog:
+  enabled: true
+  default: false
+  k8sDenyNamespaces: ['kube-system', 'consul', 'vault'] 
